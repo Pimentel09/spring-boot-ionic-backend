@@ -9,8 +9,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.nelioalves.cursomc.domain.Categoria;
+import com.nelioalves.cursomc.domain.Cidade;
+import com.nelioalves.cursomc.domain.Estado;
 import com.nelioalves.cursomc.domain.Produto;
 import com.nelioalves.cursomc.repositories.CategoriaRepository;
+import com.nelioalves.cursomc.repositories.CidadeRepository;
+import com.nelioalves.cursomc.repositories.EstadoRepository;
 import com.nelioalves.cursomc.repositories.ProdutoRepository;
 
 
@@ -23,7 +27,9 @@ public class CursomcApplication implements CommandLineRunner {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	@Autowired
-	
+	private EstadoRepository estadoRepository;
+	@Autowired
+	private CidadeRepository cidadeRepository;
 	
 	
 	
@@ -66,9 +72,7 @@ public class CursomcApplication implements CommandLineRunner {
 				.preco(20.0)
 				.categorias(Arrays.asList(cat1,cat2))
 				.build();
-					
-		
-		
+							
 		Produto p3 = Produto.builder()
 				.nome("Quadro")
 				.preco(300.0)
@@ -78,6 +82,33 @@ public class CursomcApplication implements CommandLineRunner {
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));	
+		
+		Estado est1 = Estado.builder()
+				.nome("Minas Gerais")
+				.build();
+		
+		Estado est2 = Estado.builder()
+				.nome("São Paulo")
+				.build();
+		
+		Cidade c1 = Cidade.builder()
+				.nome("Uberlândia")
+				.estado(est1)
+				.build();
+		
+		Cidade c2 = Cidade.builder()
+				.nome("São Paulo")
+				.estado(est2)
+				.build();
+		
+		Cidade c3 = Cidade.builder()
+				.nome("Campinas")
+				.estado(est2)
+				.build();
+		
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
+		
 		
 //		Categoria cat1 = new Categoria(1, "Informática");
 //		Categoria cat2 = new Categoria(2, "Escritório");
