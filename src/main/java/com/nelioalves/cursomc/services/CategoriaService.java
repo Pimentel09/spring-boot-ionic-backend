@@ -17,7 +17,7 @@ public class CategoriaService {
 	
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto " + id + " deu ruim! "
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto " + id + " Não encontrado! "
 				+ ", Tipo: " + Categoria.class.getName()));
 	}
 	
