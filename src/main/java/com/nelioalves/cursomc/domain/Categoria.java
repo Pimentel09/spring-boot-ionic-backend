@@ -37,7 +37,7 @@ public class Categoria implements Serializable {
 	Integer id;
 	String nome;
 	
-	
+	@Builder.Default 
 	@ManyToMany(mappedBy = "categorias")
 	List<Produto> produtos = new ArrayList<>();
 	
