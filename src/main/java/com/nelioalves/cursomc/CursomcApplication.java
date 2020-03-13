@@ -85,6 +85,29 @@ public class CursomcApplication implements CommandLineRunner {
 				.nome("Escritório")
 				.build();
 		
+		Categoria cat3 = Categoria.builder()
+				.nome("Cama Mesa e Banho")
+				.build();
+		
+		Categoria cat4 = Categoria.builder()
+				.nome("Eletrônicos")
+				.build();
+		
+		Categoria cat5 = Categoria.builder()
+				.nome("Jardinagem")
+				.build();
+		
+		Categoria cat6 = Categoria.builder()
+				.nome("Decoração")
+				.build();
+		
+		Categoria cat7 = Categoria.builder()
+				.nome("Perfumaria")
+				.build();
+	
+		
+		
+		
 		Produto p1 = Produto.builder()
 				.nome("Computador")
 				.preco(200.0)
@@ -104,7 +127,7 @@ public class CursomcApplication implements CommandLineRunner {
 				.build();
 		
 		
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
 		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));	
 		
 		Estado est1 = Estado.builder()
