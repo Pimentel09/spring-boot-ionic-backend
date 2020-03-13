@@ -22,8 +22,8 @@ import lombok.experimental.FieldDefaults;
 
 
 
-@AllArgsConstructor(access = AccessLevel.PACKAGE)
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Builder(toBuilder = true)
