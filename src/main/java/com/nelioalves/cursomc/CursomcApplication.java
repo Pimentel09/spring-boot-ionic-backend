@@ -111,24 +111,72 @@ public class CursomcApplication implements CommandLineRunner {
 		Produto p1 = Produto.builder()
 				.nome("Computador")
 				.preco(200.0)
-				.categorias(Arrays.asList(cat1))
+				.categorias(Arrays.asList(cat1,cat4))
 				.build();
 		
 		Produto p2 = Produto.builder()
-				.nome("Mouse")
+				.nome("Impressora")
 				.preco(20.0)
-				.categorias(Arrays.asList(cat1,cat2))
+				.categorias(Arrays.asList(cat1,cat2,cat4))
 				.build();
 							
 		Produto p3 = Produto.builder()
-				.nome("Quadro")
+				.nome("Mouse")
 				.preco(300.0)
-				.categorias(Arrays.asList(cat1))
+				.categorias(Arrays.asList(cat1,cat4))
+				.build();
+		
+		Produto p4 = Produto.builder()
+				.nome("Mesa de Escritório")
+				.preco(300.0)
+				.categorias(Arrays.asList(cat2))
+				.build();
+		
+		Produto p5 = Produto.builder()
+				.nome("Toalha")
+				.preco(50.0)
+				.categorias(Arrays.asList(cat3))
+				.build();
+		
+		Produto p6 = Produto.builder()
+				.nome("Colcha")
+				.preco(200.0)
+				.categorias(Arrays.asList(cat3))
+				.build();
+		
+		Produto p7 = Produto.builder()
+				.nome("Tv true color")
+				.preco(4000.0)
+				.categorias(Arrays.asList(cat4))
+				.build();
+		
+		Produto p8 = Produto.builder()
+				.nome("Roçadeira")
+				.preco(800.0)
+				.categorias(Arrays.asList(cat5))
+				.build();
+		
+		Produto p9 = Produto.builder()
+				.nome("abajour")
+				.preco(100.0)
+				.categorias(Arrays.asList(cat6))
+				.build();
+		
+		Produto p10 = Produto.builder()
+				.nome("Pendente")
+				.preco(180.0)
+				.categorias(Arrays.asList(cat6))
+				.build();
+		
+		Produto p11 = Produto.builder()
+				.nome("Shampoo")
+				.preco(90.0)
+				.categorias(Arrays.asList(cat7))
 				.build();
 		
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
-		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));	
+		produtoRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11));	
 		
 		Estado est1 = Estado.builder()
 				.nome("Minas Gerais")
